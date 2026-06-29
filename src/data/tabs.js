@@ -1,3 +1,6 @@
+// Each tab follows the same shape expected by TabPanel:
+// id controls selection, label appears in the tab button, and the content
+// fields are rendered by the reusable Heading and Paragraph components.
 export const tabs = [
   {
     id: 'lorem',

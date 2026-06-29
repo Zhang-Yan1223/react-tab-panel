@@ -5,14 +5,17 @@ import { Paragraph } from './Paragraph.jsx';
 // The panel accepts tab data as props so the same component can be reused
 // with any group of heading and paragraph content.
 export function TabPanel({ tabs, defaultTabId }) {
+  // Use the requested default tab when provided; otherwise fall back to the first item.
   const initialTabId = defaultTabId ?? tabs[0]?.id;
   const [selectedTabId, setSelectedTabId] = useState(initialTabId);
 
+  // Derive the selected tab from state so the rendered content always matches the active button.
   const selectedTab = useMemo(
     () => tabs.find((tab) => tab.id === selectedTabId) ?? tabs[0],
     [selectedTabId, tabs],
   );
 
+  // Empty data should not render broken tab markup.
   if (!tabs.length) {
     return null;
   }
@@ -24,6 +27,7 @@ export function TabPanel({ tabs, defaultTabId }) {
           const isSelected = tab.id === selectedTab.id;
 
           return (
+            // ARIA attributes connect each tab button to its panel for assistive technology.
             <button
               className="tab-button"
               type="button"

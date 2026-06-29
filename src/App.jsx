@@ -15,6 +15,7 @@ export default function App() {
         </p>
       </section>
 
+      {/* Tab data is passed in, so the panel can be reused with any content set. */}
       <TabPanel tabs={tabs} defaultTabId="facilisi" />
     </main>
   );

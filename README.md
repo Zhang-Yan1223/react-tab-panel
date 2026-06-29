@@ -1,52 +1,52 @@
 # React Tab Panel
 
-A small React implementation of a reusable tab panel component. The selected tab dynamically renders a reusable `Heading` component and `Paragraph` component.
+一个小型的 React 实现，用来展示一个可复用的 Tab Panel 组件。当前选中的 tab 会动态渲染可复用的 `Heading` 组件和 `Paragraph` 组件。
 
-## Tech Stack
+## 技术栈
 
 - React
 - Vite
 - Vitest
 - React Testing Library
 
-## Getting Started
+## 本地运行
 
-Install dependencies:
+安装依赖：
 
 ```bash
 npm install
 ```
 
-Run the development server:
+启动开发服务器：
 
 ```bash
 npm run dev
 ```
 
-Run tests:
+运行测试：
 
 ```bash
 npm run test:run
 ```
 
-Build for production:
+生产环境构建：
 
 ```bash
 npm run build
 ```
 
-## Approach
+## 实现思路
 
-The project keeps display and state responsibilities separate:
+这个项目把展示逻辑和状态逻辑分开：
 
-- `Heading` renders reusable heading content.
-- `Paragraph` renders reusable paragraph content.
-- `TabPanel` owns tab selection state and renders the selected tab's content.
-- `tabs.js` stores tab data separately so the component can be reused with different content.
+- `Heading` 用来渲染可复用的标题内容。
+- `Paragraph` 用来渲染可复用的段落内容。
+- `TabPanel` 负责 tab 的选中状态，并渲染当前选中 tab 的内容。
+- `tabs.js` 单独存放 tab 数据，这样组件可以复用于不同内容场景。
 
-The tab controls use accessible `tablist`, `tab`, and `tabpanel` roles, along with `aria-selected`, `aria-controls`, and `aria-labelledby`.
+tab 控件使用了可访问性相关的角色和属性，包括 `tablist`、`tab`、`tabpanel`，以及 `aria-selected`、`aria-controls`、`aria-labelledby`。
 
-## Project Structure
+## 项目结构
 
 ```txt
 src/
